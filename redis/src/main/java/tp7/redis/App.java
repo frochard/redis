@@ -15,14 +15,14 @@ public class App
 		String value = jedis.get("foo");
 		
 		System.err.println(value);	
-		System.out.println(jedis.get("---------------------"));
+		System.out.println("---------------------");
 		
 		/*		Jedis jedis = new Jedis("localhost");*/
 		System.out.println(jedis.get("counter"));
 		jedis.incr("counter");
 		System.out.println(jedis.get("counter"));
 		
-		System.out.println(jedis.get("---------------------"));		
+		System.out.println("---------------------");
 		String cacheKey = "cachekey";
 //		Jedis jedis = new Jedis("localhost");
 		// adding a new key
@@ -41,7 +41,7 @@ public class App
 
 		// trying to get the expired key
 		System.out.println("Expired Key:" + jedis.get(cacheKey));
-		System.out.println(jedis.get("---------------------"));
+		System.out.println("---------------------");
 		 cacheKey = "languages";
 		//Jedis jedis = new Jedis("localhost");
 		// Adding a set as value
@@ -58,7 +58,7 @@ public class App
 		// Getting the values... it doesn't allow duplicates
 		System.out.println("Languages: " + jedis.smembers(cacheKey));
 
-		System.out.println(jedis.get("---------------------"));
+		System.out.println("---------------------");
 
 		
 		
